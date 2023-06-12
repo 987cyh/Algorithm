@@ -44,3 +44,13 @@ plt.xlabel('sample size')
 plt.ylabel('sample mean')
 plt.show()
 #%%
+# 표본평균 계산 사용자 정의 함수
+def calc_sample_mean(size, n_trial):
+    sample_mean_array = np.zeros(n_trial)
+    for i in range(0, n_trial):
+        sample = population.rvs(size = size)
+        sample_mean_array[i] = np.mean(sample)
+    return(sample_mean_array)
+
+np.random.seed(1)
+np.mean(calc_sample_mean(size = 10, n_trial = 10000))
