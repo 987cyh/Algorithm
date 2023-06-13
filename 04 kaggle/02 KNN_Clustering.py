@@ -38,3 +38,4 @@ for k in range(1, 11):
     knn.fit(x_train, y_train)
     score = knn.score(x_valid, y_valid)
     print('k: %d, accuracy: %.2f' % (k, score*100))
+#%%
