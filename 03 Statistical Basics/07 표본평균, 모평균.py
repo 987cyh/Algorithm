@@ -54,3 +54,33 @@ def calc_sample_mean(size, n_trial):
 
 np.random.seed(1)
 np.mean(calc_sample_mean(size = 10, n_trial = 10000))
+#%%
+
+np.random.seed(1)
+# samle size 10
+size_10 = calc_sample_mean(size = 10, n_trial = 10000)
+size_10_df = pd.DataFrame({
+    "sample_mean":size_10,
+    "size"       :np.tile("size 10", 10000)
+})
+# samle size 20
+size_20 = calc_sample_mean(size = 20, n_trial = 10000)
+size_20_df = pd.DataFrame({
+    "sample_mean":size_20,
+    "size"       :np.tile("size 20", 10000)
+})
+# samle size 30
+size_30 = calc_sample_mean(size = 30, n_trial = 10000)
+size_30_df = pd.DataFrame({
+    "sample_mean":size_30,
+    "size"       :np.tile("size 30", 10000)
+})
+# 종합
+sim_result = pd.concat(
+    [size_10_df, size_20_df, size_30_df])
+# 결과
+print(sim_result.head())
+
+sns.violinplot(x = "size", y = "sample_mean", data = sim_result, color = 'gray')
+plt.show()
+#%%
