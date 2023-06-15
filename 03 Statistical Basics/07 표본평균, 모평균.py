@@ -84,3 +84,17 @@ print(sim_result.head())
 sns.violinplot(x = "size", y = "sample_mean", data = sim_result, color = 'gray')
 plt.show()
 #%%
+
+size_array = np.arange(start=2, stop=102, step=2)
+sample_mean_std_array = np.zeros(len(size_array))
+
+np.random.seed(1)
+for i in range(0, len(size_array)):
+    sample_mean = calc_sample_mean(size =size_array[i], n_trial = 100)
+    sample_mean_std_array[i] = np.std(sample_mean,ddof = 1)
+
+plt.plot(size_array, sample_mean_std_array,color = 'black')
+plt.xlabel("sample size")
+plt.ylabel("mean_std value")
+plt.show()
+#%%
