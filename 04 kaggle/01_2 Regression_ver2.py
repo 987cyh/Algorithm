@@ -128,6 +128,7 @@ from sklearn.model_selection import train_test_split
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=10) # 8:2
 
 import statsmodels.api as sm
+x = sm.add_constant(x) # 상수항 추가
 model = sm.OLS(y, x)
 result = model.fit()
 result.summary()
@@ -138,11 +139,11 @@ from sklearn.metrics import mean_squared_error # MSE
 # Linear Regression
 from sklearn.linear_model import LinearRegression
 
-model = LinearRegression()
+model = LinearRegression() # LinearRegression(fit_intercept=True)가 기본값이며, 상수함 포함
 model.fit(x_train, y_train)
 pred = model.predict(x_train)
-print(model.intercept_)
-print(model.coef_)
+print(model.intercept_) # 추정된 상수항
+print(model.coef_) # 추장된 가중치 백터
 
 model_pred_train = model.predict(x_train)
 model_pred_test = model.predict(x_test)
