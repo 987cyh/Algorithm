@@ -65,7 +65,7 @@ plt.show()
 plt.scatter(원래각도[:,0], 원래각도[:,1],s=0.5)
 plt.show()
 
-#공분산행렬로 변환한다.
+#공분산행렬로 변환
 행렬변환 = 원래각도 @ 공분산
 
 plt.scatter(행렬변환[:,0], 행렬변환[:,1],s=0.5)
@@ -128,7 +128,8 @@ plt.show()
 from sklearn.decomposition import PCA
 data = np.concatenate([X[:,np.newaxis],Y[:,np.newaxis]], axis=1)
 
-pca = PCA(n_components = 2) # feature 변수 개수가 2개
+# feature 변수 개수가 2개
+pca = PCA(n_components=2)
 pca.fit(data)
 
 pca.components_
@@ -136,7 +137,6 @@ pca.explained_variance_ratio_
 
 predict = pca.transform(data)
 pre2 = data @ pca.components_.T
-
 
 plt.scatter(predict[:,0], predict[:,1])
 plt.show()
