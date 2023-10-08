@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-@author: Kloud
+@author(Director of Research) : Kloud80
 
 @student: 987cyh
 """
