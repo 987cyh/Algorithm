@@ -4,7 +4,6 @@
 
 @student: 987cyh
 
-작성자 : 구름
 목적 : KERAS를 이용한 다층퍼셉트론 구현 예시
 """
 # package
@@ -20,7 +19,6 @@ nds = np.array(ds) #넘파이로 변환
 
 x_train = nds[:,:2]
 y_train = nds[:,2:]
-
 #%%
 from keras.models import Sequential #개별 레이어른 선형적으로 적제하기 위한 모델
 from keras.layers import Dense #일반적인 형태의 뉴럴네트워크 계층 / 앞선 학습에 사용한 은닉/출력층에 해당
