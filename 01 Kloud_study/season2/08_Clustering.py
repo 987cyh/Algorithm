@@ -15,8 +15,8 @@ X = np.array(data.values)
 plt.scatter(x=data['x'], y=data['y'], s=1)
 plt.show()
 #%%
-#kmeans 클러스터링 진행
-from sklearn.cluster import KMeans #kmeans
+# KMeans
+from sklearn.cluster import KMeans
 from scipy.spatial.distance import cdist
 
 def display_cluster(X, y, centroid=None):
@@ -36,6 +36,7 @@ for iter in range(1,10) :
     display_cluster(X, y, centroid)
     input('c')
 
+# DBSCAN
 from sklearn.cluster import DBSCAN
 model = DBSCAN(eps=50, min_samples=10)
 y = model.fit_predict(X)
