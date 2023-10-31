@@ -18,7 +18,6 @@ from matplotlib import pyplot as plt
 # 구글 드라이브에 연결
 from google.colab import drive
 drive.mount('/content/gdrive/')
-
 # 작업 폴더 이동
 os.chdir('/content/gdrive/My Drive/Colab Notebooks/urban-data-mining/06 CNN/data/')
 os.listdir()
