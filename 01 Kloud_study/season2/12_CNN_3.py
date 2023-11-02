@@ -25,8 +25,6 @@ from google.colab import drive
 drive.mount('/content/gdrive/')
 #작업 폴더 이동
 os.chdir('/content/gdrive/My Drive/Colab Notebooks/urban_data_mining_23/07 CNN/data/')
-os.listdir()
-# os.getcwd()
 #%%
 #사용할 이미지를 생성
 r = np.array([[200, 200, 200, 200, 200],
