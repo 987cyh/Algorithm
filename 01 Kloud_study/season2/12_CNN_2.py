@@ -18,8 +18,6 @@ from google.colab import drive
 drive.mount('/content/gdrive/')
 #작업 폴더 이동
 os.chdir('/content/gdrive/My Drive/Colab Notebooks/urban_data_mining_23/07 CNN/data/')
-os.listdir()
-# os.getcwd()
 #%%
 #이미지를 불러내서 numpy로 변환
 img = Image.open('images/BV1171010400100090001.png')
